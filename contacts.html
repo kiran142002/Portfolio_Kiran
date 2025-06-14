@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --secondary-color: #4a45b1;
+            --accent-color: #25D366;
+            --instagram-color: #E1306C;
+            --linkedin-color: #0077B5;
+            --dark-color: #2c3965;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            background: #aeb8db ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .form-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .map-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .form {
+            --input-focus: var(--primary-color);
+            --font-color: #323232;
+            --font-color-sub: #666;
+            --bg-color: #fff;
+            --main-color: var(--primary-color);
+            padding: 30px;
+            background: var(--bg-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            color: var(--dark-color);
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .title span {
+            color: var(--font-color-sub);
+            font-weight: 500;
+            font-size: 16px;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .input {
+            width: 100%;
+            height: 45px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            background-color: var(--bg-color);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--font-color);
+            padding: 5px 15px;
+            outline: none;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        textarea.input {
+            height: 120px;
+            resize: vertical;
+            padding-top: 15px;
+        }
+
+        .input::placeholder {
+            color: var(--font-color-sub);
+            opacity: 0.8;
+        }
+
+        .input:focus {
+            border-color: var(--input-focus);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            background-color: rgba(108, 99, 255, 0.05);
+        }
+
+        .contact-item:hover {
+            background-color: rgba(108, 99, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .phone-icon {
+            background-color: var(--primary-color);
+        }
+
+        .whatsapp-icon {
+            background-color: var(--accent-color);
+        }
+
+        .linkedin-icon {
+            background-color: var(--linkedin-color);
+        }
+
+        .instagram-icon {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .contact-text {
+            flex-grow: 1;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--font-color);
+        }
+
+        .contact-button {
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: none;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            text-align: center;
+            min-width: 80px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .whatsapp-button {
+            background-color: var(--accent-color);
+        }
+
+        .linkedin-button {
+            background-color: var(--linkedin-color);
+        }
+
+        .instagram-button {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .social-button {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .social-button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-confirm {
+            width: 200px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+        }
+
+        .button-confirm:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.6);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+
+        .button-confirm:active {
+            transform: translateY(0);
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .form-container, .map-container {
+                max-width: 100%;
+            }
+
+            .map-container iframe {
+                min-height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-item {
+                flex-wrap: wrap;
+            }
+
+            .contact-text {
+                width: 100%;
+                text-align: center;
+                white-space: normal;
+            }
+
+            .contact-button {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            .form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Contact Form -->
+    <div class="form-container">
+        <form class="form">
+            <div class="title">Contact Me<br><span>Let's build something amazing together</span></div>
+            <input type="text" placeholder="Your Name" name="name" class="input">
+            <input type="email" placeholder="Your Email" name="email" class="input">
+            <textarea placeholder="Your Message" name="message" class="input"></textarea>
+
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <div class="contact-icon phone-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">+91 9150567254</div>
+                    <a href="tel:+919150567254" class="contact-button phone-icon">Call</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon whatsapp-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">WhatsApp</div>
+                    <a href="https://wa.me/919150567254" target="_blank" class="contact-button whatsapp-button">Chat</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon linkedin-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-text">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/kiran142002" target="_blank" class="contact-button linkedin-button">Connect</a>
+                </div>
+            </div>
+
+            <div class="social-buttons">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-button instagram-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/kiran142002" target="_blank" class="social-button" style="background-color: #333;">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/yourprofile" target="_blank" class="social-button" style="background-color: #1DA1F2;">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+
+            <div class="button-container">
+                <button type="button" class="button-confirm">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.6176389520183!2d80.27250807330297!3d13.12339198720613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA3JzI0LjIiTiA4MMKwMTYnMzAuMyJF!5e0!3m2!1sen!2sin!4v1749878233265!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+<div class="audio-container">
+    <audio id="bgMusic" autoplay loop>
+
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg">
+
+    </audio>
+</div>
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Audio control with 50% volume
+    document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('bgMusic');
+        const audioToggle = document.getElementById('audioToggle');
+        let isPlaying = false;
+
+        // Set volume to 50%
+        audio.volume = 0.5;
+
+        // Try to play audio after user interaction
+        const playAudio = function() {
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Playback prevented");
+                });
+            }
+        };
+
+        // Toggle play/pause
+        audioToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                playAudio();
+                audioToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Enable audio on first user interaction
+        document.addEventListener('click', function initAudio() {
+            playAudio();
+            isPlaying = true;
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+    });
+</script>
+</body>
+</html>

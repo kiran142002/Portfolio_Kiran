@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiran Kumar M - Skills</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #2c3e50;
+            --accent-color: #ff6b6b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            padding-top: 3rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .skill-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            border-radius: 10px 10px 0 0 !important;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-item:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+
+        .skill-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(13, 110, 253, 0.1);
+            border-radius: 50%;
+            color: var(--primary-color);
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .expertise-level {
+            font-size: 0.8rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Kiran Kumar M</h1>
+        <h3 class="subtitle">Full Stack Java Developer</h3>
+    </div>
+
+    <div class="row">
+        <!-- Front-End Skills Card -->
+        <div class="col-md-4">
+            <div class="card skill-card">
+                <div class="card-header">
+                    <i class="fas fa-laptop-code me-2"></i> Front-End
+                </div>
+                <div class="card-body">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">HTML5</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">CSS3</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">JavaScript</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-bootstrap"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Bootstrap</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Thymeleaf</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back-End Skills Card -->
+        <div class="col-md-4">
+            <div class="card skill-card">
+                <div class="card-header">
+                    <i class="fas fa-server me-2"></i> Back-End
+                </div>
+                <div class="card-body">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Java</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Spring Boot</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">JSP</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Java Servlets</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">REST APIs</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Database & Tools Card -->
+        <div class="col-md-4">
+            <div class="card skill-card">
+                <div class="card-header">
+                    <i class="fas fa-database me-2"></i> Database & Tools
+                </div>
+                <div class="card-body">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">MySQL</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">MS SQL Server</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">JDBC</p>
+                            <p class="expertise-level">Advanced</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Hibernate</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <div>
+                            <p class="skill-name">Git/GitHub</p>
+                            <p class="expertise-level">Intermediate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Frameworks Card -->
+        <div class="col-md-6">
+            <div class="card skill-card">
+                <div class="card-header">
+                    <i class="fas fa-cubes me-2"></i> Frameworks
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <p class="skill-name">Spring Boot</p>
+                                    <p class="expertise-level">Advanced</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <p class="skill-name">Hibernate</p>
+                                    <p class="expertise-level">Advanced</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fas fa-window-maximize"></i>
+                                </div>
+                                <div>
+                                    <p class="skill-name">JSP</p>
+                                    <p class="expertise-level">Advanced</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="skill-item">
+                                <div class="skill-icon">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <div>
+                                    <p class="skill-name">Bootstrap</p>
+                                    <p class="expertise-level">Advanced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Expertise Card -->
+        <div class="col-md-6">
+            <div class="card skill-card">
+                <div class="card-header bg-success">
+                    <i class="fas fa-star me-2"></i> Key Expertise
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Database Optimization <span class="highlight">(Reduced query time by 50%)</span></li>
+                        <li class="list-group-item">RESTful API Development</li>
+                        <li class="list-group-item">CRUD Operations</li>
+                        <li class="list-group-item">Session Management</li>
+                        <li class="list-group-item">Object-Relational Mapping (ORM)</li>
+                        <li class="list-group-item">MVC Architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="audio-container">
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg">
+
+    </audio>
+</div>
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Audio control with 50% volume
+    document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('bgMusic');
+        const audioToggle = document.getElementById('audioToggle');
+        let isPlaying = false;
+
+        // Set volume to 50%
+        audio.volume = 0.5;
+
+        // Try to play audio after user interaction
+        const playAudio = function() {
+            const playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Playback prevented");
+                });
+            }
+        };
+
+        // Toggle play/pause
+        audioToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                playAudio();
+                audioToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Enable audio on first user interaction
+        document.addEventListener('click', function initAudio() {
+            playAudio();
+            isPlaying = true;
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+    });
+</script>
+</body>
+</html>
